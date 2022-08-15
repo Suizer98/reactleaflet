@@ -13,7 +13,7 @@ export default function App() {
     />
     <Marker position={center}>
       <Popup>
-        {center}
+        {center[0]}
       </Popup>
     </Marker>
   </MapContainer>
