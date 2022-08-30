@@ -6,6 +6,7 @@ import teslajson from './tesla.json';
 console.log(teslajson);
 
 const center = [1.3411547188393913, 103.81687980973597];
+const filtered = teslajson.filter(tsla => tsla.address.country === "Singapore")
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {teslajson.map(tsla => (
+      {filtered.map(tsla => (
         <Marker         
         key = {tsla.id}
         position={[tsla.gps.latitude, tsla.gps.longitude]}>
