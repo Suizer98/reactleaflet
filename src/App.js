@@ -20,6 +20,16 @@ export default function App() {
         <Marker         
         key = {tsla.id}
         position={[tsla.gps.latitude, tsla.gps.longitude]}>
+
+          <Popup position={[tsla.gps.latitude, tsla.gps.longitude]}>
+            <div>
+              <h2>{"Name: " + tsla.name}</h2>
+              <p>{"Status: " + tsla.status}</p>
+              <p>{"Address: " + tsla.address.street}</p>
+              <p>{"Number of Charging Stations: " + tsla.stallCount}</p>
+            </div>
+          </Popup>
+
         </Marker>
       ))}
 
